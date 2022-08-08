@@ -17,6 +17,13 @@ Sequence detector is a good example to describe FSMs. It produces a pulse output
 The drawing of the correct state diagram is very crucial in designing FSMs. Though there is no fixed rule of drawing state diagrams some comments can be made. In present state S0, if the input is ‘1’ then the next state is S1 and if input ‘0’ then the next state is the current state. It is similar for present state S1. In present state S2 if there is a false bit, the next state is S0 and in present state S3 if there is a false bit, the next state is S1. From the above statement it can be said that if there is a false input, the next state will be the nearest similar state. It is to remember that for any combinations we have to reach the branch where the output is ‘1’. For example, consider input sequence (din) as “011010”. The sequence of next states will be “S0S1S1S2S3S0”.
 The ‘1010’ sequence detector using the Mealy machine without overlapping is realized using Verilog.
 ## C. Application
+= Shift registers.
+= Flip flops.
+= Analog to digital and digital to analog converters.
+= Counters.
+= Clocks.
+= Used as registers inside microprocessors and controllers to store temporary information.
+= Applied in programmable devices such as CPLD, PLD, and FPGA.
 
 ## D. Block Diagram
 
@@ -36,7 +43,7 @@ $ = sudo apt-get install iverilog gtkwaveve=
 ###### Steps for cloning the repository ubuntu
 To clone the repository and download the netlist files for simulation, enter the following commands in your terminal:
 
-$ =sudo apt install git
+$ =sudo apt install git=
 $ git clone https://github.com/Anujjha1031/iiitb_sqd_1010
 $ cd iiitb_sqd_1010/
 $ iverilog iiitb_sqd_1010.v iiitb_sqd_1010_tb.v
