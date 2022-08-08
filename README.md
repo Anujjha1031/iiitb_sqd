@@ -4,7 +4,7 @@ This project describes the
 
 ## B. Introduction
 FSMs, an important category of sequential circuits, are used frequently in designing digital systems. From the daily used electronic machines to the complex digital systems, FSMs are used everywhere. For example, in a station the vending machine which dispatches ticket uses a simple FSM. In the complex digital systems the controlling part is most of the times implemented using FSMs.
-###### FSMs are generally of two types
+###### FSMs are generally of two types:
 MEALY Machine: MEALY circuits are named after G. H, Mealy, one of the leading personalities in designing digital systems. The basic property of Mealy circuits is that the output is a function of the present input conditions and the present state (PS) of the circuit.
 MOORE Machine: MOORE circuits are named after E. F. Moore, another leading personality in designing digital systems. The basic property of Moore circuits is that the output is strictly a function of the present state (PS) of the circuit.
 Most of the digital systems use either Moore or Mealy machine but both machines also can be used together. In initial days of digital system design when HDL languages are not discovered, Mealy or Moore machines are realized using K-Map optimization technique. The K-map optimization technique provides an optimized solution but it is a rigorous and lengthy process. On the contrary, HDL provides an easy solution to the design of FSMs by saving design time. In this tutorial, we will discuss the design of some of the digital systems using both Mealy and Moore machine. We will end up with a comparison between these two machines.
@@ -21,14 +21,45 @@ The ‘1010’ sequence detector using the Mealy machine without overlapping is 
 ## D. Block Diagram
 
 ## E. Tool installation details
+###### About iverilog
+Icarus Verilog is a Verilog simulation and synthesis tool. It operates as a compiler, compiling source code written in Verilog (IEEE-1364) into some target format. For batch simulation, the compiler can generate an intermediate form called vvp assembly. This intermediate form is executed by the vvp command. For synthesis, the compiler generates netlists in the desired format.
+
+###### About GTKWave
+GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing. 
+
+###### Installing iverilog and GTKWave in ubuntu
+Open your terminal and type the following to install iverilog and GTKWave
+
+$ sudo apt get update
+$ sudo apt get install iverilog gtkwave
+
+###### Steps for cloning the repository ubuntu
+To clone the repository and download the netlist files for simulation, enter the following commands in your terminal:
+
+$ sudo apt install git
+
+$ git clone https://github.com/rakshit-23/iiitb_usr
+
+$ cd iiitb_usr/
+
+$ iverilog iiitb_usr.v iiitb_usr_tb.v
+
+$ ./a.out
+
+$ gtkwave iiitb_usr_out.vcd
 
 ## F. Functional Characteristics
 
 ## G. Contributors
+* Anuj Kumar Jha
+* Kunal Ghosh
 
 ## H. Acknowledgements
+* Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
 
 ## I. Contact Information
+* Anuj Kumar Jha, M.Tech Student, International Institute of Information Technology, Bangalore anujjha.101296@gmail.com
+* Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com
 
 ## J. Referneces
 
