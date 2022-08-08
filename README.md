@@ -30,23 +30,18 @@ GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX 
 ###### Installing iverilog and GTKWave in ubuntu
 Open your terminal and type the following to install iverilog and GTKWave
 
-$ sudo apt get update
-$ sudo apt get install iverilog gtkwave
+$ = sudo apt-get update=
+$ = sudo apt-get install iverilog gtkwaveve=
 
 ###### Steps for cloning the repository ubuntu
 To clone the repository and download the netlist files for simulation, enter the following commands in your terminal:
 
-$ sudo apt install git
-
-$ git clone https://github.com/rakshit-23/iiitb_usr
-
-$ cd iiitb_usr/
-
-$ iverilog iiitb_usr.v iiitb_usr_tb.v
-
+$ =sudo apt install git
+$ git clone https://github.com/Anujjha1031/iiitb_sqd_1010
+$ cd iiitb_sqd_1010/
+$ iverilog iiitb_sqd_1010.v iiitb_sqd_1010_tb.v
 $ ./a.out
-
-$ gtkwave iiitb_usr_out.vcd
+$ gtkwave iiitb_sqd_1010_out.vcd=
 
 ## F. Functional Characteristics
 
