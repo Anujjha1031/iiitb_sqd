@@ -37,8 +37,8 @@ GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX 
 ###### Installing iverilog and GTKWave in ubuntu
 Open your terminal and type the following to install iverilog and GTKWave
 
-$ = sudo apt-get update=
-$ = sudo apt-get install iverilog gtkwaveve=
+#ffffff sudo apt-get updates
+#ffffff sudo apt-get install iverilog gtkwaveve
 
 ###### Steps for cloning the repository ubuntu
 To clone the repository and download the netlist files for simulation, enter the following commands in your terminal:
