@@ -50,13 +50,19 @@ $ sudo apt-get install iverilog gtkwaveve
 ## Functional Simulation
 ###### Steps for cloning the repository ubuntu
 To clone the repository and download the netlist files for simulation, enter the following commands in your terminal:
+```
+$ sudo apt install git
 
-sudo apt install git
-git clone https://github.com/Anujjha1031/iiitb_sqd_1010
-cd iiitb_sqd_1010/
-iverilog iiitb_sqd_1010.v iiitb_sqd_1010_tb.v
-./a.out
-gtkwave iiitb_sqd_1010_out.vcd=
+$ git clone https://github.com/Anujjha1031/iiitb_sqd_1010
+
+$ cd iiitb_sqd_1010/
+
+$ iverilog iiitb_sqd_1010.v iiitb_sqd_1010_tb.v
+
+$ ./a.out
+
+$ gtkwave iiitb_sqd_1010_out.vcd
+```
 
 ## F. Functional Characteristics
 
