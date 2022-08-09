@@ -25,11 +25,13 @@ The correct state diagram is important in designing FSMs. Though there is no fix
 
 ## D. Circuit and State Diagram
 ![mealy_wo](https://user-images.githubusercontent.com/110462872/183476667-a2c927ee-0da9-4971-9144-401f521cb251.png)
-Figure 1: Mealy based ‘1010’ sequence detector without overlapping.
+
+  Figure 1: Mealy based ‘1010’ sequence detector without overlapping.
 
 The optimized logic architecture for ‘1010’ sequence detector without overlapping using Mealy Machine is shown below.
 ![mealy1010-768x685](https://user-images.githubusercontent.com/110462872/183476310-b87cf9f4-896a-442d-b709-750d9e28ef14.png)
-Figure 2: Mealy based ‘1010’ sequence detector without overlapping.
+
+   Figure 2: Mealy based ‘1010’ sequence detector without overlapping.
 
 ## E. Tool installation details
 ###### About iverilog
