@@ -15,13 +15,11 @@ Sequence detector is one of the example to describe FSMs. It produces a pulse ou
 The correct state diagram is important in designing FSMs. Though there is no fixed rule of drawing state diagrams some comments can be made. In present state S0, if the input is ‘1’ then the next state is S1 and if input ‘0’ then the next state is the current state. It is similar for present state S1. In present state S2 if there is a wrong bit, the next state is S0 and in present state S3 if there is a wrong bit, the next state is S1. It can be said that if there is a false input, the next state will be the nearest similar state. We have to reach the branch where the output is ‘1’. For example, consider input sequence (din) as “011010”. The sequence of next states will be “S0S1S1S2S3S0”.
 
 ## C. Application
-* Shift registers.
-* Flip flops.
-* Analog to digital and digital to analog converters.
-* Counters.
-* Clocks.
-* Used as registers inside microprocessors and controllers to store temporary information.
-* Applied in programmable devices such as CPLD, PLD, and FPGA.
+* Elevator
+* Vending Machine
+* Traffic Lights
+* Controllers in CPU
+* Speech recognition
 
 ## D. Circuit and State Diagram
 ![mealy_wo](https://user-images.githubusercontent.com/110462872/183476667-a2c927ee-0da9-4971-9144-401f521cb251.png)
