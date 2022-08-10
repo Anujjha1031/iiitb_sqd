@@ -65,7 +65,8 @@ $ gtkwave iiitb_sqd_1010_out.vcd
 ```
 
 ## F. Functional Characteristics
-
+Simulation result for 1010 detection without overlapping:
+![Sqd_1010](https://user-images.githubusercontent.com/110462872/183984868-99c1f853-3ce9-4fe5-ae4d-3e2ff15edc72.png)
 
 ## G. Contributors
 * Anuj Kumar Jha
