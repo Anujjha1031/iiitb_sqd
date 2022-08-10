@@ -6,6 +6,7 @@ This project describes an example of a FSM which is sequence detector where we c
 FSMs are used in designing digital systems. Majority of the electronic machines to the complex digital systems are commomly used everywhere and has requirement of a sequence detector. For example, the vending machine which produces ticket uses a simple FSM. In these type of digital systems the controlling part is implemented using FSMs.
 ###### FSMs are generally of two types:
 MEALY Machine: The Mealy circuits are those in which the output is a function of the present input conditions and the present state of the circuit.
+
 MOORE Machine: The Moore circuits are those in which the output is strictly a function of the present state of the circuit.
 Here, I have used Mealy state machine based sequence detector without overlapping of bits 1010 in a bit stream.
 
@@ -59,7 +60,8 @@ $ gtkwave iiitb_sqd_1010_out.vcd
 
 ## F. Functional Characteristics
 Simulation result for 1010 sequence detection without overlapping:
-![Sqd_1010](https://user-images.githubusercontent.com/110462872/183984868-99c1f853-3ce9-4fe5-ae4d-3e2ff15edc72.png)
+![Sqd_1010](https://user-images.githubusercontent.com/110462872/183985894-0ef9cae7-f66d-483f-a054-88e845be4d02.png)
+
 
 ## G. Contributors
 * Anuj Kumar Jha
