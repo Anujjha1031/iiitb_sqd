@@ -43,33 +43,27 @@ Open your terminal and type the following to install iverilog and GTKWave
 
 ```
 $ sudo apt-get updates
-
 $ sudo apt-get install iverilog gtkwaveve
 ```
-
 ## Functional Simulation
 ###### Steps for cloning the repository ubuntu
 To clone the repository and download the netlist files for simulation, enter the following commands in your terminal:
 ```
 $ sudo apt install git
-
 $ git clone https://github.com/Anujjha1031/iiitb_sqd_1010
-
 $ cd iiitb_sqd_1010/
-
 $ iverilog iiitb_sqd_1010.v iiitb_sqd_1010_tb.v
-
 $ ./a.out
-
 $ gtkwave iiitb_sqd_1010_out.vcd
 ```
 
 ## F. Functional Characteristics
-Simulation result for 1010 detection without overlapping:
+Simulation result for 1010 sequence detection without overlapping:
 ![Sqd_1010](https://user-images.githubusercontent.com/110462872/183984868-99c1f853-3ce9-4fe5-ae4d-3e2ff15edc72.png)
 
 ## G. Contributors
 * Anuj Kumar Jha
+* Lokesh Manjhi
 * Kunal Ghosh
 
 ## H. Acknowledgements
