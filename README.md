@@ -62,6 +62,50 @@ $ gtkwave iiitb_sqd_1010_out.vcd
 Simulation result for 1010 sequence detection without overlapping:
 ![Sqd_1010](https://user-images.githubusercontent.com/110462872/184595327-cbfccee2-010e-4369-8dc6-f6a6883c8330.png)
 
+##Synthesis
+The software used to run gate level synthesis is Yosys. Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains. Yosys can be adapted to perform any synthesis job by combining the existing passes (algorithms) using synthesis scripts and adding additional passes as needed by extending the Yosys C++ code base.
+
+```
+git clone https://github.com/YosysHQ/yosys.git
+make
+sudo make install make test
+```
+
+The commands to run synthesis in yosys are given below. First create an yosys script yosys_run.sh and paste the below commands.
+
+```
+read_liberty -lib lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog iiitb_sqd_1010.v
+synth -top iiitb_sqd_1010
+dfflibmap -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+clean
+flatten
+write_verilog -noattr iiitb_sqd_1010_synth.v
+stat
+show
+```
+Then, open terminal in the folder iiitb_sqd_1010 and type the below command.
+```
+yosys -s yosys_run.sh
+```
+
+On running the yosys script, we get the following output:
+![rtl_netlist](https://user-images.githubusercontent.com/110462872/184840766-d8173adc-3e52-4adc-9ce8-aef2e61fb7c9.png)
+
+## Gate level Simulation
+GLS stands for gate level simulation. When we write the RTL code, we test it by giving it some stimulus through the testbench and check it for the desired specifications. Similarly, we run the netlist as the design under test (dut) with the same testbench. Gate level simulation is done to verify the logical correctness of the design after synthesis. Also, it ensures the timing of the design.
+Commands to run the GLS are given below.
+```
+iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 iiitb_sqd_1010_synth.v iiitb_sqd_1010_tb.v iiitb_sqd_1010/verilog_model/primitives.v /iiitb_sqd_1010/verilog_model/sky130_fd_sc_hd.v -iiitb_sqd_1010
+./iiitb_sqd_1010
+gtkwave iiitb_sqd_1010.vcd
+```
+
+
+
+
+
 
 ## G. Contributors
 * Anuj Kumar Jha
