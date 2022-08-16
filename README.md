@@ -90,6 +90,7 @@ Then, open terminal in the folder iiitb_sqd_1010 and type the below command.
 yosys -s yosys_run.sh
 ```
 ##Printing statistics.
+![Printing Stats](https://user-images.githubusercontent.com/110462872/184845456-64865c93-063b-4eff-96c7-abf7c3c31f44.png)
 
 
 On running the yosys script, we get the following output:
