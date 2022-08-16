@@ -62,7 +62,7 @@ $ gtkwave iiitb_sqd_1010_out.vcd
 Simulation result for 1010 sequence detection without overlapping:
 ![Sqd_1010](https://user-images.githubusercontent.com/110462872/184595327-cbfccee2-010e-4369-8dc6-f6a6883c8330.png)
 
-##Synthesis
+## Synthesis
 The software used to run gate level synthesis is Yosys. Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains. Yosys can be adapted to perform any synthesis job by combining the existing passes (algorithms) using synthesis scripts and adding additional passes as needed by extending the Yosys C++ code base.
 
 ```
@@ -89,7 +89,7 @@ Then, open terminal in the folder iiitb_sqd_1010 and type the below command.
 ```
 yosys -s yosys_run.sh
 ```
-##Printing statistics.
+## Printing statistics.
 ![Printing Stats](https://user-images.githubusercontent.com/110462872/184845456-64865c93-063b-4eff-96c7-abf7c3c31f44.png)
 
 
