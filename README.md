@@ -111,7 +111,6 @@ gtkwave iiitb_sqd_1010.vcd
 
 ## G. Contributors
 * Anuj Kumar Jha
-* Lokesh Manjhi
 * Kunal Ghosh
 
 ## H. Acknowledgements
