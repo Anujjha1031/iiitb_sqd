@@ -89,6 +89,8 @@ Then, open terminal in the folder iiitb_sqd_1010 and type the below command.
 ```
 yosys -s yosys_run.sh
 ```
+##Printing statistics.
+
 
 On running the yosys script, we get the following output:
 ![rtl_netlist](https://user-images.githubusercontent.com/110462872/184840766-d8173adc-3e52-4adc-9ce8-aef2e61fb7c9.png)
