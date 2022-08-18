@@ -122,7 +122,7 @@ Pre level simulation and post level simulation waverforms are matched.
 * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
 
 ## I. Contact Information
-* Anuj Kumar Jha, M.Tech Student, International Institute of Information Technology, Bangalore anujjha.101296@gmail.com
+* Anuj Kumar Jha, M.Tech VLSI, International Institute of Information Technology, Bangalore anujjha.101296@gmail.com/AnujKumar.Jha@iiitb.ac.in
 * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com
 
 ## J. Referneces
