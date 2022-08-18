@@ -112,6 +112,7 @@ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 iiitb_sqd_1010_synth.v iiitb_sqd_1010_tb.v
 ## Observation
 Pre level simulation and post level simulation waverforms are matched.
 
+![GLS_sqd_1010](https://user-images.githubusercontent.com/110462872/185381128-1cfd6932-1415-4bcb-8a5a-b9f4ef2054b5.png)
 
 
 
