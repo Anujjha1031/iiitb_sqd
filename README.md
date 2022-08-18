@@ -105,9 +105,7 @@ GLS stands for gate level simulation. When we write the RTL code, we test it by 
 
 Commands to run the GLS are given below.
 ```
-iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 iiitb_sqd_1010_synth.v iiitb_sqd_1010_tb.v iiitb_sqd_1010/verilog_model/primitives.v /iiitb_sqd_1010/verilog_model/sky130_fd_sc_hd.v -iiitb_sqd_1010
-./iiitb_sqd_1010
-gtkwave iiitb_sqd_1010.vcd
+iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 iiitb_sqd_1010_synth.v iiitb_sqd_1010_tb.v ../iiitb_sqd_1010/verilog_model/primitives.v ../iiitb_sqd_1010/verilog_model/sky130_fd_sc_hd.v
 ```
 
 ## G. Contributors
