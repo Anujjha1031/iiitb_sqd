@@ -90,7 +90,8 @@ Then, open terminal in the folder iiitb_sqd_1010 and type the below command.
 yosys -s yosys_run.sh
 ```
 ## Printing statistics.
-![Screenshot from 2022-08-18 04-14-19](https://user-images.githubusercontent.com/110462872/185367964-b9f07391-0e84-4d93-88fd-4502033fb2b9.png)
+
+![Stats _sqd_1010](https://user-images.githubusercontent.com/110462872/185380116-79ed72e8-7089-48e2-bd60-faa862fec1de.png)
 
 
 
@@ -107,6 +108,12 @@ Commands to run the GLS are given below.
 ```
 iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 iiitb_sqd_1010_synth.v iiitb_sqd_1010_tb.v ../iiitb_sqd_1010/verilog_model/primitives.v ../iiitb_sqd_1010/verilog_model/sky130_fd_sc_hd.v
 ```
+
+## Observation
+Pre level simulation and post level simulation waverforms are matched.
+
+
+
 
 ## G. Contributors
 * Anuj Kumar Jha
