@@ -60,7 +60,8 @@ $ gtkwave iiitb_sqd_tb.vcd
 
 ## F. Functional Characteristics
 Simulation result for 1010 sequence detection without overlapping:
-![Sqd_1010](https://user-images.githubusercontent.com/110462872/184595327-cbfccee2-010e-4369-8dc6-f6a6883c8330.png)
+![func_sim](https://user-images.githubusercontent.com/110462872/186611486-bbe1c980-21cc-4540-ae3a-dca693ac3e10.png)
+
 
 ## Synthesis
 The software used to run gate level synthesis is Yosys. Yosys is a framework for Verilog RTL synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains. Yosys can be adapted to perform any synthesis job by combining the existing passes (algorithms) using synthesis scripts and adding additional passes as needed by extending the Yosys C++ code base.
