@@ -122,12 +122,15 @@ OpenLane is an automated RTL to GDSII flow based on several components including
 more at https://github.com/The-OpenROAD-Project/OpenLane
 
 ## Installation instructions
+
 ```
 $   apt install -y build-essential python3 python3-venv python3-pip
 ```
+
 Docker installation process: https://docs.docker.com/engine/install/ubuntu/
-```
+
 goto home directory->
+
 ```
 $   git clone https://github.com/The-OpenROAD-Project/OpenLane.git
 $   cd OpenLane/
@@ -139,6 +142,7 @@ To test the open lane
 ```
 $ sudo make test
 ```
+
 It takes approximate time of 5min to complete. After 43 steps, if it ended with saying Basic test passed then open lane installed succesfully.
 
 ## Magic
@@ -147,6 +151,7 @@ Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John
 More about magic at http://opencircuitdesign.com/magic/index.html
 
 Run following commands one by one to fulfill the system requirement.
+
 ```
 $   sudo apt-get install m4
 $   sudo apt-get install tcsh
@@ -157,7 +162,9 @@ $   sudo apt-get install libcairo2-dev
 $   sudo apt-get install mesa-common-dev libglu1-mesa-dev
 $   sudo apt-get install libncurses-dev
 ```
+
 To install magic goto home directory
+
 ```
 $   git clone https://github.com/RTimothyEdwards/magic
 $   cd magic/
@@ -165,11 +172,13 @@ $   ./configure
 $   sudo make
 $   sudo make install
 ```
+
 Type magic terminal to check whether it installed succesfully or not. type exit to exit magic.
 
-###### Generating Layout
+## Generating Layout
 
 Open terminal in home directory
+
 ```
 $   cd OpenLane/
 $   cd designs/
@@ -186,28 +195,39 @@ $   ./flow.tcl -design iiitb_sd_fsm
 
 To see the layout we use a tool called magic which we installed earlier. open terminal in home directory
 
+```
 $   cd OpenLane/designs/iiitb_pwm_gen/run
 $   ls
+```
+
 select most run directoy from list
 
 example:
+
 ```
 $  cd RUN_2022.08.21_10.59.29
 ```
+
 run following instruction
+
 ```
 $   cd results/final/def
 ```
+
 update the highlited text with appropriate path
+
 ```
 $ magic -T /home/ravi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read iiitb_sd_fsm.def &
 ```
+
 layout will be open in new window
 
 ## Layout
 
+
 ## including the custom cell sky130_vsdinv.
-printing stattistics
+
+Printing stattistics
 
 ## sky130_vsdinv cell in the layout
 
