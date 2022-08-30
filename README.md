@@ -116,20 +116,39 @@ Pre level simulation and post level simulation waverforms are matched.
 ![GLS_sqd_1010](https://user-images.githubusercontent.com/110462872/185381128-1cfd6932-1415-4bcb-8a5a-b9f4ef2054b5.png)
 
 ## Final Layout
-## Openlane
+###### Openlane
 OpenLane is an automated RTL to GDSII flow based on several components including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, CU-GR, Klayout and a number of custom scripts for design exploration and optimization. The flow performs full ASIC implementation steps from RTL all the way down to GDSII.
 
 more at https://github.com/The-OpenROAD-Project/OpenLane
 
-## Installation instructions
+###### Installation instructions
 
 ```
 $   apt install -y build-essential python3 python3-venv python3-pip
 ```
 
 Docker installation process: https://docs.docker.com/engine/install/ubuntu/
+```
+$ sudo apt-get remove docker docker-engine docker.io containerd runc (removes older version of docker if installed)
+$ sudo apt-get update
+$ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release    
+$ sudo mkdir -p /etc/apt/keyrings
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null  
+$ sudo apt-get update
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+$ apt-cache madison docker-ce (copy the version string you want to install)
+$ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin (paste the version string copies in place of <VERSION_STRING>)
+$ sudo docker run hello-world (If the docker is successfully installed u will get a success message here)
+```
 
-goto home directory->
+###### Installation of OpenLane on ubuntu
 
 ```
 $   git clone https://github.com/The-OpenROAD-Project/OpenLane.git
@@ -145,23 +164,45 @@ $ sudo make test
 
 It takes approximate time of 5min to complete. After 43 steps, if it ended with saying Basic test passed then open lane installed succesfully.
 
-## Magic
+###### Magic
 Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
 
 More about magic at http://opencircuitdesign.com/magic/index.html
 
+For Magic to be installed and work properly the following softwares have to be installed first:
 Run following commands one by one to fulfill the system requirement.
 
+Installing csh
 ```
-$   sudo apt-get install m4
-$   sudo apt-get install tcsh
-$   sudo apt-get install csh
-$   sudo apt-get install libx11-dev
-$   sudo apt-get install tcl-dev tk-dev
-$   sudo apt-get install libcairo2-dev
-$   sudo apt-get install mesa-common-dev libglu1-mesa-dev
-$   sudo apt-get install libncurses-dev
+$ sudo apt-get install csh
 ```
+Installing x11/xorg
+```
+$ sudo apt-get install x11
+```
+```
+$ sudo apt-get install xorg
+```
+```
+$ sudo apt-get install xorg openbox
+```
+Installing GCC
+```
+$ sudo apt-get install gcc
+```
+Installing build-essential
+```
+$ sudo apt-get install build-essential
+```
+Installing OpenGL
+```
+$ sudo apt-get install freeglut3-dev
+```
+Installing tcl/tk
+```
+$ sudo apt-get install tcl-dev tk-dev
+```
+###### Installing magic
 
 To install magic goto home directory
 
@@ -175,7 +216,18 @@ $   sudo make install
 
 Type magic terminal to check whether it installed succesfully or not. type exit to exit magic.
 
+Klayout Installation
+```
+$ sudo apt-get install klayout
+```
+ngspice Installation
+```
+$ sudo apt-get install ngspice
+```
+
 ## Generating Layout
+###### Preparation
+The layout is generated using OpenLane. To run a custom design on openlane, Navigate to the openlane folder and run the following commands:
 
 Open terminal in home directory
 
@@ -193,7 +245,7 @@ $   sudo make mount
 $   ./flow.tcl -design iiitb_sqd_1010
 ```
 
-To see the layout we use a tool called magic which we installed earlier. open terminal in home directory
+To see the layout we use a tool called magic which we installed earlier. Open terminal in home directory
 
 ```
 $   cd OpenLane/designs/iiitb_sqd_1010/run
@@ -213,8 +265,6 @@ run following instruction
 ```
 $   cd results/final/def
 ```
-
-update the highlited text with appropriate path
 
 ```
 $ magic -T /home/riiitb/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read iiitb_sqd_1010.def &
