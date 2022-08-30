@@ -116,12 +116,12 @@ Pre level simulation and post level simulation waverforms are matched.
 ![GLS_sqd_1010](https://user-images.githubusercontent.com/110462872/185381128-1cfd6932-1415-4bcb-8a5a-b9f4ef2054b5.png)
 
 ## Final Layout
-###### Openlane
+## Openlane
 OpenLane is an automated RTL to GDSII flow based on several components including OpenROAD, Yosys, Magic, Netgen, CVC, SPEF-Extractor, CU-GR, Klayout and a number of custom scripts for design exploration and optimization. The flow performs full ASIC implementation steps from RTL all the way down to GDSII.
 
 more at https://github.com/The-OpenROAD-Project/OpenLane
 
-###### Installation instructions
+## Installation instructions
 ```
 $   apt install -y build-essential python3 python3-venv python3-pip
 ```
@@ -133,13 +133,15 @@ $   git clone https://github.com/The-OpenROAD-Project/OpenLane.git
 $   cd OpenLane/
 $   sudo make
 ```
+
 To test the open lane
+
 ```
 $ sudo make test
 ```
 It takes approximate time of 5min to complete. After 43 steps, if it ended with saying Basic test passed then open lane installed succesfully.
 
-###### Magic
+## Magic
 Magic is a venerable VLSI layout tool, written in the 1980's at Berkeley by John Ousterhout, now famous primarily for writing the scripting interpreter language Tcl. Due largely in part to its liberal Berkeley open-source license, magic has remained popular with universities and small companies. The open-source license has allowed VLSI engineers with a bent toward programming to implement clever ideas and help magic stay abreast of fabrication technology. However, it is the well thought-out core algorithms which lend to magic the greatest part of its popularity. Magic is widely cited as being the easiest tool to use for circuit layout, even for people who ultimately rely on commercial tools for their product design flow.
 
 More about magic at http://opencircuitdesign.com/magic/index.html
@@ -202,12 +204,12 @@ $ magic -T /home/ravi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech
 ```
 layout will be open in new window
 
-###### Layout
+## Layout
 
-###### including the custom cell sky130_vsdinv.
+## including the custom cell sky130_vsdinv.
 printing stattistics
 
-###### sky130_vsdinv cell in the layout
+## sky130_vsdinv cell in the layout
 
 
 
