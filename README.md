@@ -303,6 +303,11 @@ Printing statistics:
 * Madhav Rao, Professor, IIIT-Bangalore. mr@iiitb.ac.in
 * Nanditha Rao, Professor, IIIT-Bangalore. nanditha.rao@iiitb.ac.in
 
-## Referneces
+## References
 * https://digitalsystemdesign.in/fsm-design/
 * https://www.chipverify.com/verilog/verilog-sequence-detector#:~:text=A%20very%20common%20example%20of,that%20are%20input%20to%20it.
+* VLSI System Design: https://www.vlsisystemdesign.com/
+* SkyWater SKY130 PDK: https://skywater-pdk.readthedocs.io/en/main/contents/libraries/foundry-provided.html
+* RTL Design using Verilog with Sky130 Technology: https://www.vsdiat.com/dashboard
+* Openlane - SKY130: https://github.com/The-OpenROAD-Project/OpenLane
+* Magic Installation: https://github.com/RTimothyEdwards/magic
