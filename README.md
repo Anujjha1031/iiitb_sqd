@@ -182,21 +182,21 @@ Open terminal in home directory
 ```
 $   cd OpenLane/
 $   cd designs/
-$   mkdir iiitb_pwm_gen
-$   cd iiitb_pwm_gen/
-$   wget https://raw.githubusercontent.com/Gogireddyravikiran/iiitb_sd_fsm/main/config.json
+$   mkdir iiitb_sqd_1010
+$   cd iiitb_sqd_1010/
+$   wget https://raw.githubusercontent.com/Anujjha1031/iiitb_sqd_1010/main/config.json
 $   mkdir src
 $   cd src/
-$   wget https://raw.githubusercontent.com/Gogireddyravikiran/iiitb_sd_fsm/main/iiitb_sd_fsm.v
+$   wget https://raw.githubusercontent.com/Anujjha1031/iiitb_sqd_1010/main/iiitb_sqd_1010.v
 $   cd ../../../
 $   sudo make mount
-$   ./flow.tcl -design iiitb_sd_fsm
+$   ./flow.tcl -design iiitb_sqd_1010
 ```
 
 To see the layout we use a tool called magic which we installed earlier. open terminal in home directory
 
 ```
-$   cd OpenLane/designs/iiitb_pwm_gen/run
+$   cd OpenLane/designs/iiitb_sqd_1010/run
 $   ls
 ```
 
@@ -217,7 +217,7 @@ $   cd results/final/def
 update the highlited text with appropriate path
 
 ```
-$ magic -T /home/ravi/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read iiitb_sd_fsm.def &
+$ magic -T /home/riiitb/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read iiitb_sqd_1010.def &
 ```
 
 layout will be open in new window
@@ -227,7 +227,8 @@ layout will be open in new window
 
 ## including the custom cell sky130_vsdinv.
 
-Printing stattistics
+Printing statistics:
+
 
 ## sky130_vsdinv cell in the layout
 
@@ -237,13 +238,20 @@ Printing stattistics
 ## Contributors
 * Anuj Kumar Jha
 * Kunal Ghosh
+* Madhav Rao
+* Nanditha Rao
 
 ## Acknowledgements
 * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
+* Nickson Jose, VLSI Engineer, VSD Corp. Pvt. Ltd.
+* Madhav Rao, Professor, IIIT-Bangalore.
+* Nanditha Rao, Professor, IIIT-Bangalore.
 
 ## Contact Information
 * Anuj Kumar Jha, M.Tech VLSI, International Institute of Information Technology, Bangalore anujjha.101296@gmail.com/AnujKumar.Jha@iiitb.ac.in
 * Kunal Ghosh, Director, VSD Corp. Pvt. Ltd. kunalghosh@gmail.com
+* Madhav Rao, Professor, IIIT-Bangalore. mr@iiitb.ac.in
+* Nanditha Rao, Professor, IIIT-Bangalore. nanditha.rao@iiitb.ac.in
 
 ## Referneces
 * https://digitalsystemdesign.in/fsm-design/
