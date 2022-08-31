@@ -290,7 +290,7 @@ Here we are going to customise our layout by including our custom made sky130_vs
 
 ###### CREATING THE SKY130_VSDINV CELL LEF FILE
 
-* You need to first get the git repository of the vsdstdccelldesign.To get the repository type the following command:
+* You need to first get the git repository of the vsdstdccelldesign. To get the repository type the following command:
 ```
 git clone https://github.com/nickson-jose/vsdstdcelldesign.git
 ```
@@ -341,14 +341,15 @@ We need to run the openlane now in the interactive mode to include our custom ma
 
 ###### SYNTHESIS:
 
-1. To Invoke synthesis type run_synthesis.This runs the synthesis where yosys translates RTL into circuit using generic components and abc maps the circuit to Standard Cells.
+* To Invoke synthesis type run_synthesis. This runs the synthesis where yosys translates RTL into circuit using generic components and abc maps the circuit to Standard Cells.
+
 Printing statistics:
 ![pre syn netlist](https://user-images.githubusercontent.com/110462872/187624623-205519e5-b892-4156-8417-6c64b1e99384.png)
 
 
 ![vsdinv](https://user-images.githubusercontent.com/110462872/187616896-2cf8653c-68f5-4b6d-9074-5556056cdec8.png)
 
-Calcuation of Flop Ratio:
+Calculation of Flop Ratio:
 
 ```
 Flop ratio = Number of D Flip flops 
