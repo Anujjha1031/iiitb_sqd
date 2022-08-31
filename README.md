@@ -267,20 +267,24 @@ $   cd results/final/def
 ```
 
 ```
-$ magic -T /home/riiitb/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read iiitb_sqd_1010.def &
+$ magic -T /home/iiitb/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read iiitb_sqd_1010.def &
 ```
 
 layout will be open in new window
 
 ## Layout
 
+![Full view](https://user-images.githubusercontent.com/110462872/187617006-f4bd44f7-e99b-4f19-8006-534914ac8113.png)
+
 
 ## including the custom cell sky130_vsdinv.
 
 Printing statistics:
-
+![vsdinv](https://user-images.githubusercontent.com/110462872/187616896-2cf8653c-68f5-4b6d-9074-5556056cdec8.png)
 
 ## sky130_vsdinv cell in the layout
+
+![inv layout](https://user-images.githubusercontent.com/110462872/187616950-73f045f7-51ad-4b9d-9217-52b02bedd244.png)
 
 
 
