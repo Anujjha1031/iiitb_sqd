@@ -10,6 +10,11 @@ MEALY Machine: The Mealy circuits are those in which the output is a function of
 MOORE Machine: The Moore circuits are those in which the output is strictly a function of the present state of the circuit.
 Here, I have used Mealy state machine based sequence detector without overlapping of bits 1010 in a bit stream.
 
+###### Block Diagram:
+
+![mealy block diag](https://user-images.githubusercontent.com/110462872/187619764-96d3903e-262f-40b1-9c35-208a2345bdd1.png)
+
+
 ###### Mealy based sequence detector
 Sequence detector is one of the example to describe FSMs. It produces a pulse output whenever it detects a predefined sequence. In this, we have considered a 4-bit sequence “1010”. The first step of an FSM design is to draw the state diagram. The sequence detectors are of two types: with overlapping and without overlapping. For example, consider the input sequence as “11010101011”. Then in ‘without overlapping’ style, the output y will be “00001000100” and the output y in ‘with overlapping’ style will be “00001010100”. The ‘with overlapping’ methodology also considers the overlapping sequences.
 
@@ -114,6 +119,14 @@ iverilog -DFUNCTIONAL -DUNIT_DELAY=#1 iiitb_sqd_1010_synth.v iiitb_sqd_1010_tb.v
 Pre level simulation and post level simulation waverforms are matched.
 
 ![GLS_sqd_1010](https://user-images.githubusercontent.com/110462872/185381128-1cfd6932-1415-4bcb-8a5a-b9f4ef2054b5.png)
+
+## Physical Design from Netlist to GDSII
+Physical design is process of transforming netlist into layout which is manufacture-able [GDS]. Physical design process is often referred as PnR (Place and Route). Main steps in physical design are placement of all logical cells, clock tree synthesis & routing. During this process of physical design timing, power, design & technology constraints have to be met. Further design might require being optimized w.r.t power, performance and area.
+
+Below are the stages and the respective tools that are called by openlane for the functionalities as described:
+
+![physical design flow](https://user-images.githubusercontent.com/110462872/187619635-a5fdc45c-5c81-4d43-b22c-6cd182538c60.JPG)
+
 
 ## Final Layout
 ###### Openlane
@@ -270,24 +283,125 @@ $   cd results/final/def
 $ magic -T /home/iiitb/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read iiitb_sqd_1010.def &
 ```
 
-layout will be open in new window
+The final layout obtained after the completion of the flow in non-interactive mode is shown below:
+
+###### Customizing the layout
+Here we are going to customise our layout by including our custom made sky130_vsdinv cell into our layout.
+
+###### CREATING THE SKY130_VSDINV CELL LEF FILE
+
+* You need to first get the git repository of the vsdstdccelldesign.To get the repository type the following command:
+```
+git clone https://github.com/nickson-jose/vsdstdcelldesign.git
+```
+
+* Now you need to copy your tech file sky130A.tech to this folder.
+
+* Next run the magic command to open the sky130_vsdinv.mag file.Use the following command:
+```
+magic -T sky130A.tech sky130_vsdinv.mag&
+```
+
+* One can zoom into Magic layout by selecting an area with left and right mouse click followed by pressing "z" key.
+* Various components can be identified by using the what command in tkcon window after making a selection on the component.
+* The image showing the invoked magic tool using the above command:
+
+* The next step is setting port class and port use attributes. The "class" and "use" properties of the port have no internal meaning to magic but are used by the LEF and DEF format read and write routines, and match the LEF/DEF CLASS and USE properties for macro cell pins. These attributes are set in tkcon window (after selecting each port on layout window. A keyboard shortcut would be,repeatedly pressing s till that port gets highlighed).
+
+* The tkcon command window of the port classification is shown in the image below:
+
+* In the next step, use lef write command to write the LEF file with the same nomenclature as that of the layout .mag file. This will create a sky130_vsdinv.lef file in the same folder.
+
+###### INCLUDING THE SKY130_VSDINV CELL
+
+Move the sky130_fd_sc_hd__fast.lib,sky130_fd_sc_hd__slow.lib,sky130_fd_sc_hd__typical.lib,sky130_vsdinv.lef files to your design src folder.
+
+![src vsdinv](https://user-images.githubusercontent.com/110462872/187623276-2ccb4bc2-1537-47df-a740-dd5957f7e918.png)
+
+* Next , Modify the json file by including the following lines:
+
+```
+"GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
+"CLOCK_PERIOD": 65,
+"PL_RANDOM_GLB_PLACEMENT": 1,
+"PL_TARGET_DENSITY": 0.5,
+"FP_SIZING" : "relative",
+```
+Invoking openlane by following command.
+
+```
+sudo make mount
+```
+###### INTERACTIVE MODE: 
+We need to run the openlane now in the interactive mode to include our custom made lef file before synthesis.Such that the openlane recognises our lef files during the flow for mapping. - 1. Running openlane in interactive mode: The command to the run the flow in interactive mode is given below: 
+
+```
+./flow.tcl -interactive
+```
+
+###### SYNTHESIS:
+
+1. To Invoke synthesis type run_synthesis.This runs the synthesis where yosys translates RTL into circuit using generic components and abc maps the circuit to Standard Cells.
+Printing statistics:
+![pre syn netlist](https://user-images.githubusercontent.com/110462872/187624623-205519e5-b892-4156-8417-6c64b1e99384.png)
+
+
+![vsdinv](https://user-images.githubusercontent.com/110462872/187616896-2cf8653c-68f5-4b6d-9074-5556056cdec8.png)
+
+Calcuation of Flop Ratio:
+
+```
+Flop ratio = Number of D Flip flops 
+             ______________________
+             Total Number of cells
+```
+
+###### FLOORPLAN
+
+* Importance of files in increasing priority order:
+
+floorplan.tcl - System default envrionment variables
+conifg.tcl
+sky130A_sky130_fd_sc_hd_config.tcl
+* Floorplan envrionment variables or switches:
+
+FP_CORE_UTIL - floorplan core utilisation
+FP_ASPECT_RATIO - floorplan aspect ratio
+FP_CORE_MARGIN - Core to die margin area
+FP_IO_MODE - defines pin configurations (1 = equidistant/0 = not equidistant)
+FP_CORE_VMETAL - vertical metal layer
+FP_CORE_HMETAL - horizontal metal layer
+
+Note: Usually, vertical metal layer and horizontal metal layer values will be 1 more than that specified in the file
+
+* Use the command: 
+```
+run_floorplan
+```
+
+* To view the floorplan: Magic is invoked after moving to the results/floorplan directory,then use the floowing command:
+```
+magic -T /home/iiitb/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read iiitb_sqd_1010.def &
+```
+###### PLACEMENT
+The next step in the OpenLANE ASIC flow is placement. The synthesized netlist is to be placed on the floorplan. Placement is perfomed in 2 stages: 1. Global Placement: It finds optimal position for all cells which may not be legal and cells may overlap. Optimization is done through reduction of half parameter wire length. 2. Detailed Placement: It alters the position of cells post global placement so as to legalise them.
+
+Type the following command to run placement
+```
+run_placement
+```
+Post placement: the design can be viewed on magic within results/placement directory. Run the follwing command in that directory: 
+```
+magic -T /home/iiitb/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read iiitb_sqd_1010.def &
+```
 
 ## Layout
 
 ![Full view](https://user-images.githubusercontent.com/110462872/187617006-f4bd44f7-e99b-4f19-8006-534914ac8113.png)
 
-
-## including the custom cell sky130_vsdinv.
-
-Printing statistics:
-![vsdinv](https://user-images.githubusercontent.com/110462872/187616896-2cf8653c-68f5-4b6d-9074-5556056cdec8.png)
-
 ## sky130_vsdinv cell in the layout
 
 ![inv layout](https://user-images.githubusercontent.com/110462872/187616950-73f045f7-51ad-4b9d-9217-52b02bedd244.png)
-
-
-
 
 ## Contributors
 * Anuj Kumar Jha
