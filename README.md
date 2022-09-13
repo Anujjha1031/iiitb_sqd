@@ -344,8 +344,6 @@ We need to run the openlane now in the interactive mode to include our custom ma
 * To Invoke synthesis type run_synthesis. This runs the synthesis where yosys translates RTL into circuit using generic components and abc maps the circuit to Standard Cells.
 
 Printing statistics:
-![pre syn netlist](https://user-images.githubusercontent.com/110462872/187624623-205519e5-b892-4156-8417-6c64b1e99384.png)
-
 
 ![vsdinv](https://user-images.githubusercontent.com/110462872/187616896-2cf8653c-68f5-4b6d-9074-5556056cdec8.png)
 
