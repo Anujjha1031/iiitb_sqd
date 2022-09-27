@@ -402,14 +402,14 @@ magic -T /home/iiitb/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read
 
 ![inv layout](https://user-images.githubusercontent.com/110462872/187616950-73f045f7-51ad-4b9d-9217-52b02bedd244.png)
 
-## PARAMETER ANALYSIS
+## PARAMETERS
 ###### 1. Post-Layout Synthesis:
 Gate count
 
 ![Post synthesis gate count](https://user-images.githubusercontent.com/110462872/192593832-48144378-da98-4101-9d7b-e07c631c555f.png)
 
 
-Gate Count = 18
+** **Gate Count = 18
 
 Flop Ratio
 
@@ -424,7 +424,7 @@ Flop Ratio = 5/18 = 0.27
 
 ![Area](https://user-images.githubusercontent.com/110462872/192594289-a10d8309-36a2-49f4-8075-2df22294ba2a.png)
 
-__Area = 5716.910 um2
+Area = 5716.910 um^2
 
 ###### 3. Performance
 
@@ -437,8 +437,11 @@ Max Performance = 1/(Clock Period - Slack) = 1/(65 - 51.24) = 72.67 MHz
 ![Power](https://user-images.githubusercontent.com/110462872/192594685-bdfe53aa-e9ea-48f0-ab98-5cf49664f5f3.png)
 
 Internal Power = 1.12e-05 W
+
 Switching Power = 1.88e-06 W
+
 Leakage Power = 2.62e-10 W
+
 Total Power = 1.31e-05 W
 
 ## Contributors
