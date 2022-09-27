@@ -424,7 +424,7 @@ Flop Ratio = 5/18 = 0.27
 
 ![Area](https://user-images.githubusercontent.com/110462872/192594289-a10d8309-36a2-49f4-8075-2df22294ba2a.png)
 
-** Area = 5716.910 um2
+__Area = 5716.910 um2
 
 ###### 3. Performance
 
