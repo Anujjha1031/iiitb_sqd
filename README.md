@@ -409,7 +409,7 @@ Gate count
 ![Post synthesis gate count](https://user-images.githubusercontent.com/110462872/192593832-48144378-da98-4101-9d7b-e07c631c555f.png)
 
 
-** **Gate Count = 18
+***Gate Count = 18***
 
 Flop Ratio
 
