@@ -409,35 +409,35 @@ Gate count
 ![Post synthesis gate count](https://user-images.githubusercontent.com/110462872/192593832-48144378-da98-4101-9d7b-e07c631c555f.png)
 
 
-__Gate Count = 18
+Gate Count = 18
 
 Flop Ratio
 
 ![FlipFlop](https://user-images.githubusercontent.com/110462872/192596453-90562f19-f4f4-45be-8cea-76baf0adc301.png)
 
 
-*Flop ratio = Number of D Flip flops / Total Number of cells
+Flop ratio = Number of D Flip flops / Total Number of cells
 
-__Flop Ratio = 5/18 = 0.27
+Flop Ratio = 5/18 = 0.27
 
 ###### 2. Area
 
 ![Area](https://user-images.githubusercontent.com/110462872/192594289-a10d8309-36a2-49f4-8075-2df22294ba2a.png)
 
-**Area = 5716.910 um2
+** Area = 5716.910 um2
 
 ###### 3. Performance
 
 ![Slack](https://user-images.githubusercontent.com/110462872/192594628-a5887ccd-b782-458a-b698-1a7602e4b090.png)
 
-**Max Performance = 1/(Clock Period - Slack) = 1/(65 - 51.24) = 72.67 MHz
+Max Performance = 1/(Clock Period - Slack) = 1/(65 - 51.24) = 72.67 MHz
                   
 ###### 4. Power
 
 ![Power](https://user-images.githubusercontent.com/110462872/192594685-bdfe53aa-e9ea-48f0-ab98-5cf49664f5f3.png)
 
-__Internal Power = 1.12e-05 W
-__Switching Power = 1.88e-06 W
+Internal Power = 1.12e-05 W
+Switching Power = 1.88e-06 W
 Leakage Power = 2.62e-10 W
 Total Power = 1.31e-05 W
 
