@@ -427,9 +427,10 @@ Flop ratio = Number of D Flip flops / Total Number of cells
 
 ###### 3. Performance
 
-![Slack](https://user-images.githubusercontent.com/110462872/192594628-a5887ccd-b782-458a-b698-1a7602e4b090.png)
+![Slack](https://user-images.githubusercontent.com/110462872/192715251-6c0b4585-5c90-4bf5-901b-92adaa5b1d64.png)
 
-***Max Performance = 1/(Clock Period - Slack) = 1/(65 - 51.24) = 72.67 MHz***
+
+***Max Performance = 1/(Clock Period - Slack) = 1/(65 - 64.44) = 1.78 GHz***
                   
 ###### 4. Power
 
