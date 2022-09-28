@@ -1,4 +1,4 @@
-# iiitb_sqd1010 - > Sequence Detector 1010 (Without Overlapping) using Mealy Finite State Machine
+# iiitb_sqd_1010 - > Sequence Detector 1010 (Without Overlapping) using Mealy Finite State Machine
 ## Design Description
 This project describes an example of a FSM which is sequence detector where we can detect when a fixed pattern is seen in a stream of binary bits that are input to it.
 
